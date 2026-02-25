@@ -37,7 +37,11 @@ def load_listings(f):
         header = next(reader)
 
         for row in reader:
-            
+            if not row or len(row) != len(header):
+                continue
+            record = dict(zip(header,row))
+            list_1.append(record)
+
 
 ###############################################################################
 ##### TASK 2: CALCULATION FUNCTION (single calculation)
