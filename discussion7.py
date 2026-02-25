@@ -42,6 +42,8 @@ def load_listings(f):
             record = dict(zip(header,row))
             list_1.append(record)
 
+    return list_1
+
 
 ###############################################################################
 ##### TASK 2: CALCULATION FUNCTION (single calculation)
@@ -63,7 +65,7 @@ def calculate_avg_price_by_neighbourhood_group_and_room(listings):
     """
     group = {}
 
-    for lst in list_1:
+    for lst in listings:
         ner_g = lst["neighbourhood_group"]
         ro_t = lst["room_type"]
         price = float(lst["price"])
